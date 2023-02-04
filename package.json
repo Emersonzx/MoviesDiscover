@@ -1,6 +1,6 @@
 {
-  "name": "moviesdiscover",
-  "homepage": "https://emersonzx.github.io/MoviesDiscover",
+  "name": "movies_discover",
+  "homepage": "https://emersonzx.github.io/MoviesDiscover/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

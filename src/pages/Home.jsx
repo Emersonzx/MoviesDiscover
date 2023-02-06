@@ -26,7 +26,7 @@ const Home = () => {
       <div className="movies-container">
         {topMovies.length === 0 && <p>Loading...</p>}
         {topMovies.length > 0 && topMovies.map((movie) => <MovieCard key={movie.id} movie={movie}/>)}</div>
-        <h2 className="title">Website based on the TMDB API</h2>
+        <h2 className="title">Based on the TMDB API</h2>
  </div> )
 }
 

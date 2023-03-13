@@ -5,18 +5,34 @@
     padding: 1rem 2rem;
     background-color: rgb(0, 0, 0);
 }
-@media(max-width: 600px){
-    #navbar{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        align-items: center;
-        align-content: center;
-        max-width: 100vw;
+@media (max-width: 600px) {
+    #navbar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      background-color: rgb(0, 0, 0);
+      margin-bottom: 10px;
     }
+    #navbar h2 {
+      margin: 0.5rem;
+      
     }
-
+   
+    #navbar form {
+      margin: 0.5rem;
+      flex: 1 1 100%;
+    }
+    #navbar input {
+      width: 100%;
+    }
+    #navbar button {
+      flex: 1 1 auto;
+      width: auto;
+      margin-left: 0.5rem;
+    }
+  }
+  
 #navbar h2 a{
 display: flex;
 align-items: center;
@@ -36,7 +52,7 @@ border: none;
 }
 #navbar form button{
     background-color: rgb(63, 62, 145);
-    border: 2px solid rgb(89, 68, 110);
+    border: 2px solid rgb(30, 26, 85);
     border-radius: 4px;
     color: rgb(255, 255, 255);
     padding: 0.3rem;

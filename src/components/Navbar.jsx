@@ -16,12 +16,15 @@ const Navbar = () => {
     setSearch("")
   }
   return (
+   
     <div>
     <nav id="navbar">
     <h2>
       <Link to="/">
         <BiCameraMovie/>MoviesDiscover</Link>
     </h2>
+    <h2><Link to="/">Popular</Link></h2>
+    <h2><Link to="/Top-rated">Top-rated</Link></h2>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Search for a movie" 
         onChange={(e)=> setSearch(e.target.value)} value={search}/> 
@@ -31,6 +34,7 @@ const Navbar = () => {
           </nav>
             
     </div>
+    
   )
 }
 

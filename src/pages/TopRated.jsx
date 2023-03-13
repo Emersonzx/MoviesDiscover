@@ -1,33 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 import "./MoviesGrid.css";
-
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-const Home = () => {
+const TopRated = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
   const loader = useRef(null);
 
-  const getPopular = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-    setMovies((prevMovies) => {
-      const newMovies = data.results.filter((movie) =>
-        !prevMovies.some((prevMovie) => prevMovie.id === movie.id)
-      );
-      return [...prevMovies, ...newMovies];
-    });
-    setLoading(false);
-  };
-  
+  const getTopRated = async (url) => {
+   const res = await fetch(url);
+   const data = await res.json();
+   setMovies((prevMovies) => {
+     const newMovies = data.results.filter((movie) =>
+       !prevMovies.some((prevMovie) => prevMovie.id === movie.id)
+     );
+     return [...prevMovies, ...newMovies];
+   });
+   setLoading(false);
+ };
+ 
 
   useEffect(() => {
-    const popularUrl = `${moviesURL}popular?${apiKey}&page=${page}`;
-    getPopular(popularUrl);
+    const TopRatedURL = `${moviesURL}top_rated?${apiKey}&page=${page}`;
+    getTopRated(TopRatedURL);
   }, [page]);
 
   useEffect(() => {
@@ -58,7 +57,7 @@ const Home = () => {
 
   return (
     <div className="container">
-      <h2 className="title">Popular:</h2>
+      <h2 className="title">Top-rated:</h2>
       <div className="movies-container">
         {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
@@ -71,4 +70,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default TopRated;
